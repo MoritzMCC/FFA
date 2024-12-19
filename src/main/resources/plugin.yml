@@ -1,0 +1,4 @@
+name: FFA-Pit
+version: '1.0-SNAPSHOT'
+main: de.MoritzMCC.fFAPit.Main
+api-version: '1.21'
