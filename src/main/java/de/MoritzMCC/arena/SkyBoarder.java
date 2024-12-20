@@ -17,7 +17,7 @@ public class SkyBoarder extends BukkitRunnable {
     }
    @Override
     public void run(){
-       for (FFAPlayer ffaPlayer: FFAPlayerList.getPlayers()){
+       for (FFAPlayer ffaPlayer: FFAPlayerList.getPlayerList()){
            Player player = Bukkit.getPlayer(ffaPlayer.getUuid());
          if(player ==null)return;
          if(player.getLocation().getY() >= heigh )player.damage(damage);

@@ -7,7 +7,7 @@ public class FFAPlayerList {
     private static final FFAPlayerList instance = new FFAPlayerList();
     private static final Map<UUID, FFAPlayer> playerList = new HashMap();
 
-    public FFAPlayer getPlayer(UUID uuid) {
+    public static FFAPlayer getPlayer(UUID uuid) {
         return playerList.get(uuid);
     }
     public void addPlayer(FFAPlayer player) {
@@ -21,7 +21,12 @@ public class FFAPlayerList {
         return instance;
     }
 
-    public static List<FFAPlayer> getPlayers() {
-        return new ArrayList<>(playerList.values());
+    public static Map<UUID,FFAPlayer> getPlayers() {
+        return playerList;
     }
+
+    public static List<FFAPlayer> getPlayerList() {
+        return new ArrayList(playerList.values());
+    }
+
 }

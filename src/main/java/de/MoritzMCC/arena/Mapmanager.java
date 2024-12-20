@@ -3,6 +3,7 @@ package de.MoritzMCC.arena;
 import de.MoritzMCC.fFAPit.Main;
 import de.MoritzMCC.utils.ItemBuilder;
 import org.bukkit.*;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -13,12 +14,14 @@ public class Mapmanager {
 
     World world;
     int mapsize;
+    private Location center;
+
 
     public Mapmanager(World world, int mapsize) {
 
         this.world = world;
         this.mapsize = mapsize;
-        Location center = new Location(world, 0, 0, 0);
+        center = new Location(world, 0, 0, 0);
         world.getWorldBorder().setCenter(center);
         world.getWorldBorder().setSize(mapsize);
         world.getWorldBorder().setWarningDistance(5);
@@ -31,6 +34,7 @@ public class Mapmanager {
         world.setWeatherDuration(0);
         world.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false);
 
+        createKitSelectionArea();
     }
 
     public Location getRandomSpawnLocation() {
@@ -53,6 +57,35 @@ public class Mapmanager {
 
         }
 
+    }
+
+    public void createKitSelectionArea(){
+        int size = 51;
+        int wallHeight = 10;
+        int halfSize = size / 2;
+
+        for (int x = -halfSize; x <= halfSize; x++) {
+            for (int z = -halfSize; z <= halfSize; z++) {
+                for (int y = 0; y < wallHeight; y++) {
+                    Block block = world.getBlockAt(center.getBlockX() + x, center.getBlockY() + y, center.getBlockZ() + z);
+
+                    if (x == -halfSize || x == halfSize || z == -halfSize || z == halfSize) {
+                        block.setType(Material.GLASS);
+                    } else {
+                        block.setType(Material.AIR);
+                    }
+                }
+            }
+        }
+    }
+
+    public void setKitselectionEquipment(Player player){
+        Inventory inventory = player.getInventory();
+        inventory.setItem(0, new ItemBuilder(Material.CHEST).withName(ChatColor.GOLD + "Kit Selection").build());
+
+    }
+    public Location kitSelectionSpawn(){
+        return center.add(0, 180, 0);
     }
 
 }

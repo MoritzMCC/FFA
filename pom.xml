@@ -59,6 +59,12 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+
+        <repository>
+            <id>hglabor-repo</id>
+            <url>https://repo.hglabor.de/releases</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -67,6 +73,11 @@
             <artifactId>spigot-api</artifactId>
             <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.hglabor</groupId>
+            <artifactId>kitapi</artifactId>
+            <version>3.0.0</version> <!-- Ersetze mit der aktuellen Version -->
         </dependency>
     </dependencies>
 </project>
