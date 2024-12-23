@@ -60,11 +60,6 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
 
-        <repository>
-            <id>hglabor-repo</id>
-            <url>https://repo.hglabor.de/releases</url>
-        </repository>
-
     </repositories>
 
     <dependencies>
@@ -76,8 +71,9 @@
         </dependency>
         <dependency>
             <groupId>de.hglabor</groupId>
-            <artifactId>kitapi</artifactId>
-            <version>3.0.0</version> <!-- Ersetze mit der aktuellen Version -->
+            <artifactId>kit-api</artifactId>
+            <version>0.2.0</version>
         </dependency>
+
     </dependencies>
 </project>

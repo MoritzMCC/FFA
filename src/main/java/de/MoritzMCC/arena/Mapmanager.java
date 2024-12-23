@@ -82,6 +82,8 @@ public class Mapmanager {
     public void setKitselectionEquipment(Player player){
         Inventory inventory = player.getInventory();
         inventory.setItem(0, new ItemBuilder(Material.CHEST).withName(ChatColor.GOLD + "Kit Selection").build());
+        inventory.setItem(1, new ItemBuilder(Material.MAP).withName(ChatColor.AQUA + "Teleport to arena").build());
+
 
     }
     public Location kitSelectionSpawn(){
