@@ -1,11 +1,13 @@
+de/MoritzMCC/kits/AnchorKit.class
 de/MoritzMCC/ffaPlayer/Status.class
-de/MoritzMCC/utils/ItemBuilder.class
 de/MoritzMCC/fFAPit/Main.class
 de/MoritzMCC/Listener/FFAListener.class
 de/MoritzMCC/arena/SkyBoarder.class
-de/MoritzMCC/Listener/DeathListener.class
 de/MoritzMCC/Listener/FightListener.class
 de/MoritzMCC/commands/SuicideCommand.class
+de/MoritzMCC/kits/NinjaKit.class
 de/MoritzMCC/arena/Mapmanager.class
-de/MoritzMCC/ffaPlayer/FFAPlayer.class
 de/MoritzMCC/ffaPlayer/FFAPlayerList.class
+de/MoritzMCC/utils/ItemBuilder.class
+de/MoritzMCC/Listener/DeathListener.class
+de/MoritzMCC/ffaPlayer/FFAPlayer.class

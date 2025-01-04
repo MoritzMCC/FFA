@@ -29,6 +29,7 @@ public class FFAListener implements Listener {
         if(event.getItem() == null) return;
         Player player = event.getPlayer();
         Mapmanager mapmanager = Main.getMapmanager();
+        ItemStack item = player.getInventory().getItemInMainHand();
         if(event.getItem().equals(new ItemBuilder(Material.MAP).withName(ChatColor.AQUA + "Teleport to arena").build())){
             FFAPlayer ffaPlayer = FFAPlayerList.getPlayer(player.getUniqueId());
             if (ffaPlayer == null) return;
@@ -40,7 +41,6 @@ public class FFAListener implements Listener {
             player.teleport(mapmanager.getRandomSpawnLocation());
             return;
         }
-        ItemStack item = player.getInventory().getItemInMainHand();
         if(item.equals(new ItemBuilder(Material.CHEST).withName(ChatColor.GOLD + "Kit Selection").build())){
             event.setCancelled(true);
             player.openInventory(KitList());

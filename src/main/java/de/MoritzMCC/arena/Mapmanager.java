@@ -1,6 +1,5 @@
 package de.MoritzMCC.arena;
 
-import de.MoritzMCC.fFAPit.Main;
 import de.MoritzMCC.utils.ItemBuilder;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -14,7 +13,7 @@ public class Mapmanager {
 
     World world;
     int mapsize;
-    private Location center;
+    private final Location center;
 
 
     public Mapmanager(World world, int mapsize) {
